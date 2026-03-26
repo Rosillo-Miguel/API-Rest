@@ -1,0 +1,26 @@
+import mongoose, {Schema} from "mongoose";
+import type { ICategory } from "./category.types.js";
+
+const CategorySchema = new Schema<ICategory>(
+    {
+        name: { 
+            type: String, 
+            required: true 
+        },
+        description: {
+            type: String, 
+            required: false,
+            trim: true
+        },
+        active: {
+            type: Boolean, 
+            default: true 
+        },
+    },
+    {
+        timestamps: true,
+    }
+)
+const Category = mongoose.model<ICategory>("Category", CategorySchema);
+
+export default Category
