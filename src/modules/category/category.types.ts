@@ -13,8 +13,8 @@ export interface ICreateCategoryDTO{
 }
 
 export interface IUpdateCategoryDTO{
-    name?: string;
+    name: string;
     description?: string;
-    active?: boolean;
+    active: boolean;
 }
 

@@ -1,11 +1,13 @@
 import mongoose, {Schema} from "mongoose";
+
 import type { ICategory } from "./category.types.js";
 
 const CategorySchema = new Schema<ICategory>(
     {
         name: { 
             type: String, 
-            required: true 
+            required: true,
+            trim: true,
         },
         description: {
             type: String, 
@@ -19,8 +21,9 @@ const CategorySchema = new Schema<ICategory>(
     },
     {
         timestamps: true,
-    }
-)
+    },
+);
+
 const Category = mongoose.model<ICategory>("Category", CategorySchema);
 
 export default Category
