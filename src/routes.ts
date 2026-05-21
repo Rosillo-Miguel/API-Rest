@@ -1,5 +1,6 @@
 import { Router } from "express";
 import categoryRoutes from "./modules/category/category.routes.js";
+import authRoutes from "./modules/auth/auth.routes.js";
 const routes = Router();
 
 routes.get("/teste", (request,  response) => {
@@ -9,4 +10,7 @@ routes.get("/teste", (request,  response) => {
 });
 
 routes.use("/categories", categoryRoutes);
+
+routes.use("/login", authRoutes);
+
 export default routes;
